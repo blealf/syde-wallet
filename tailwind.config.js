@@ -41,6 +41,7 @@ module.exports = {
     },
   },
   plugins: [
+    require('@tailwindcss/forms'),
     plugin(function({ addVariant }) {
       addVariant('important', ({ container }) => {
         container.walkRules(rule => {

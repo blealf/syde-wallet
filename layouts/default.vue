@@ -1,7 +1,8 @@
 <template>
   <div class="dark">
-    <Header />
-    <div class="wrapper">
+    <SideBar />
+    <AppNav />
+    <div class="ml-1 p-2 sm:ml-16">
       <Nuxt />
     </div>
   </div>
@@ -14,8 +15,4 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.wrapper {
-  margin-left: 80px;
-  padding: 20px;
-}
 </style>
