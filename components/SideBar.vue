@@ -1,49 +1,62 @@
 <template>
-  <div class="fixed bg-teal-500 p-2
-    w-screen bottom-0 
-    sm:p-4
-    sm:h-screen sm:w-16
-    hover:min-w-content
-    dark:bg-teal-900
+  <div 
+    class="fixed bg-teal-500 
+      p-2 w-screen bottom-0 
+      sm:w-16 sm:p-4 sm:pt-0
+      sm:h-screen 
+      hover:min-w-content
+      dark:bg-gray-800
     "
   >
-    <div class="flex
-      sm:flex-col sm:mt-2
-      sm:items-center justify-around text-xl
-      sm:gap-6
-      text-teal-100 dark:text-teal-300
-      items-center
-     "
+    <div 
+      class="flex items-center 
+        justify-around text-xl 
+        text-teal-100
+        sm:flex-col sm:gap-6 sm:mt-2
+        dark:text-teal-300
+      "
      >
-       <div class="hidden sm:block group mb-0 sm:mb-11 text-center 
-         text-3xl hover:text-green cursor-pointer
-         font-semibold
-         dark:text-teal-400
+     <!-- Main icon -->
+       <nuxt-link 
+         to="/"
+         class="hidden group mb-0 
+           cursor-pointer text-center 
+           text-3xl font-semibold
+           sm:block sm:mb-11
+           hover:text-green
+           dark:text-teal-400
          "
        >
          <fa :icon="['fab', 'google']"/>
-       </div>
+       </nuxt-link>
+       <!-- nav items -->
         <div 
           v-for="item in navItems"
           :key="item.icon"
-          class="py-2 sm:py-2 bg-teal-600 rounded-xl 
-            text-center w-11 hover:rounded-3xl
+          class="relative py-2 rounded-xl group
+            w-11 text-center cursor-pointer
             transition-all duration-900
-            ease-linear cursor-pointer
-            relative group dark:bg-black
-            dark:hover:bg-teal-700
+            ease-linear 
+            sm:py-2
+            hover:rounded-3xl
             hover:text-black
+            dark:hover:bg-teal-700
         ">
           <fa class="hover:animate-pulse" :icon="['fas', item.icon]"/>
-          <span class="absolute bg-teal-800 -left-1  
-            bottom-12 sm:bottom-2 sm:left-12 
-            px-2 py-1 text-sm rounded-md
-            transition-all duration-100 scale-0
-            group-hover:scale-100 group-hover:text-teal-300
-          ">
+          <span 
+            class="absolute -left-1  
+              bottom-12 rounded-md
+              bg-teal-800 px-2 py-1 text-sm 
+              transition-all duration-100 scale-0
+              sm:bottom-2 sm:left-12
+              group-hover:scale-100 
+              group-hover:text-teal-300
+            "
+          >
             {{ item.name }}
           </span>
         </div>
+        <!-- Log out -->
         <div class="bottom-16 sm:absolute">
           <fa class="cursor-pointer" :icon="['fas', 'sign-out-alt']"/>
         </div>
