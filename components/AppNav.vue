@@ -141,17 +141,22 @@
 </template>
 
 <script>
+import { ref } from '@nuxtjs/composition-api'
 export default {
-  data() {
-    return {
-      showAccount: false,
-      accountItems: [
+  setup() {
+    const showAccount = ref(false)
+    const accountItems = ref(
+      [
         { name: 'Profile', icon: 'user' },
         { name: 'Balance', icon: 'wallet' },
         { name: 'Settings', icon: 'cogs' },
         { name: 'Activity', icon: 'clock' },
         { name: 'Lock', icon: 'lock' }
       ]
+    )
+    return {
+      showAccount,
+      accountItems,
     }
   }
 }
